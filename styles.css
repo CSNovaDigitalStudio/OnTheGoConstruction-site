@@ -1,0 +1,154 @@
+:root{
+	--bg:#f6f7f9;
+	--card:#ffffff;
+	--accent:#0b5cff;
+	--muted:#6b7280;
+	--maxw:1200px;
+	--gap:1.25rem;
+	--radius:10px;
+}
+*{box-sizing: border-box}
+html,body{
+	height: 100%;
+}
+
+body{
+	margin: 0;
+	font-family: Inter, system-ui,apple-system,"Segoe UI", Roboto,"Helvetica Neue", Arial;
+	background: var(--bg);	
+	color: #111827 ;
+	-webkit-font-smoothing:antialiased;
+	line-height:1.45 ;
+}
+
+.container{
+	max-width: var(--maxw);
+	margin: 0 auto;
+	padding: 1.25rem;
+}
+
+.skip-link{
+	position: fixed;
+	left: 1rem;
+	top: 1rem;
+	background: #111;
+	color: #fff;
+	padding: .5rem .75rem;
+	border-radius: 4px;
+	z-index: 999;
+	transform: translateY(-120%);
+	transition: transform .18s;
+}
+
+.skip-link:focus{
+	transform: translateY(0);
+}
+
+.site-header {
+	background: #fff;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+	position: sticky;
+	top: 0;
+	z-index: 50;
+}
+
+.header-inner{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: .75rem 0;
+}
+
+.brand{
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+	color: #111;
+	text-decoration: none;
+}
+
+.brand-logo{
+	color: var(--accent)
+}
+.brand-text{
+	font-weight: 700;
+}
+
+.nav-toggle{
+	display: none;
+	background:none;
+	border: 0;
+	font-size: 1.25rem;
+}
+
+.main-nav ul{
+	display: flex;
+	gap: .5rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.main-nav a{
+	display: inline-block;
+	padding: .5rem .5rem;
+	text-decoration: none;
+	color: inherit;
+
+}
+
+.cta{
+	background: var(--accent);
+	color: #fff;
+	padding: .5rem .75rem;
+	border-radius: 6px;
+}
+@media (max-width:880px){
+	.nav-toggle{
+		display: block
+	}
+	.main-nav{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 100%;
+		background: #fff;
+		padding: 1rem;
+		transform-origin: top;
+		display: none;
+	}
+}
+.hero{
+	padding: 2rem 0;
+	background: linear-gradient(180deg, #eef5ff 0%, transparent 40%);
+}
+.hero-grid{
+	display: grid;
+	grid-template-columns: 1fr 480px;
+	gap: 1.5rem;
+	align-items: center;
+}
+
+.hero-copy h1{
+	font-size: 2rem;
+	margin: 0 0 .5rem;
+}
+
+.hero-copy p{
+	margin: .5rem 0;
+}
+
+
+
+.hero-media img{
+	width: 50%;
+	height: auto;
+	border-radius: 12px;
+	object-fit: cover;
+	box-shadow: 0 10px 30px rgba(2, 6, 23, .80);
+}
+
+.hero-ctas .btn{
+	margin: .5rem;
+}
