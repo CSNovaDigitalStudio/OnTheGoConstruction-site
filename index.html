@@ -7,237 +7,54 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root{
-    --primary:#0f172a;
-    --accent:#f59e0b;
-    --light:#f8fafc;
-    --muted:#64748b;
-    --border:#e5e7eb;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-html{ scroll-behavior:smooth; }
-body{ color:var(--primary); background:white; }
-
-/* NAV */
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:white;
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
-    z-index:1000;
-}
-.nav-inner{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:1rem 2rem;
-}
-nav h1{ font-size:1.25rem; font-weight:700; }
-nav a{
-    margin-left:1.5rem;
-    text-decoration:none;
-    color:var(--primary);
-    font-weight:500;
-}
-nav a:hover{ color:var(--accent); }
-
-/* HERO */
-.hero{
-    min-height:100vh;
-    background:
-        linear-gradient(rgba(15,23,42,.82),rgba(15,23,42,.82)),
-        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    padding:7rem 2rem 2rem;
-}
-.hero-content{
-    max-width:720px;
-    color:white;
-}
-.hero h2{
-    font-size:3.1rem;
-    font-weight:700;
-    line-height:1.2;
-}
-.hero p{
-    margin:1.8rem 0 2.8rem;
-    font-size:1.15rem;
-    color:#e5e7eb;
-}
-.cta{
-    padding:1rem 2.6rem;
-    background:var(--accent);
-    color:white;
-    text-decoration:none;
-    border-radius:6px;
-    font-weight:600;
-}
-
-/* SECTIONS */
-section{ padding:5.5rem 2rem; }
-.container{ max-width:1200px; margin:auto; }
-
-.section-title{
-    text-align:center;
-    margin-bottom:3.5rem;
-}
-.section-title h3{
-    font-size:2.4rem;
-    font-weight:700;
-}
-.section-title p{
-    margin-top:.8rem;
-    color:var(--muted);
-}
-
-/* SERVICES */
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:2rem;
-}
-.service-card{
-    background:var(--light);
-    padding:2.8rem;
-    border-radius:12px;
-    transition:.3s;
-    border:1px solid var(--border);
-}
-.service-card:hover{ transform:translateY(-8px); }
-.service-card span{ font-size:3rem; }
-
-/* SHOWCASE */
-.showcase{ background:var(--light); }
-.featured-projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:2rem;
-}
-.project{
-    background:white;
-    border-radius:14px;
-    overflow:hidden;
-    box-shadow:0 20px 40px rgba(0,0,0,.08);
-}
-.project img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
-}
-.project div{
-    padding:1.6rem;
-}
-.project h4{
-    margin-bottom:.5rem;
-}
-.project p{
-    color:var(--muted);
-    font-size:.95rem;
-}
-
-/* PROCESS */
-.process{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:2rem;
-}
-.step{
-    text-align:center;
-    padding:2rem;
-}
-.step span{
-    font-size:2.5rem;
-    color:var(--accent);
-}
-
-/* EXPERIENCE */
-.experience{
-    background:var(--primary);
-    color:white;
-    text-align:center;
-}
-.experience p{
-    max-width:900px;
-    margin:auto;
-    color:#cbd5f5;
-    font-size:1.1rem;
-}
-
-/* CTA STRIP */
-.cta-strip{
-    background:var(--accent);
-    color:white;
-    text-align:center;
-    padding:3.5rem 2rem;
-}
-.cta-strip h3{
-    font-size:2rem;
-    margin-bottom:1rem;
-}
-
-/* CONTACT */
-.contact{text-align:center;}
-.contact-info{
-    margin-top:2rem;
-    font-size:1.15rem;
-}
-.contact-info p{ margin:.5rem 0; }
-
-/* FOOTER */
-footer{
-    background:var(--primary);
-    color:#cbd5f5;
-    text-align:center;
-    padding:2rem;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-    .hero h2{ font-size:2.3rem; }
-}
-</style>
+<!-- Link CSS -->
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
+
+<nav id="navbar">
     <div class="nav-inner">
-        <h1>On The Go Construction</h1>
-        <div>
+        <h1 class="logo">On The Go Construction</h1>
+
+        <div class="nav-links">
             <a href="#services">Services</a>
             <a href="#work">Our Work</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact" class="cta">Get a Free Quote</a>
         </div>
+
+        <a href="https://wa.me/27703004230" target="_blank" class="nav-cta">
+            WhatsApp
+        </a>
     </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
+    <div class="hero-overlay"></div>
+
     <div class="hero-content">
-        <h2>Precision Tiling & Professional Painting</h2>
-        <p>
-            We deliver clean finishes, durable workmanship, and honest service.
-            Based in Pietermaritzburg — fully mobile and ready to serve.
+        <p class="hero-tag">Trusted Local Experts</p>
+
+        <h1>
+            Tiling, Painting & Lawn Services<br>
+            Done Right the First Time
+        </h1>
+
+        <p class="hero-sub">
+            Clean finishes. Reliable service. Affordable pricing.
+            Based in Pietermaritzburg — we come to you.
         </p>
-        <a href="#contact" class="cta">Call Us Today</a>
+
+        <div class="hero-buttons">
+            <a href="#contact" class="cta primary">Get a Free Quote</a>
+            <a href="https://wa.me/27703004230" target="_blank" class="cta secondary">
+                WhatsApp Us
+            </a>
+        </div>
     </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
     <div class="container">
         <div class="section-title">
@@ -249,30 +66,28 @@ footer{
             <div class="service-card">
                 <span>🧱</span>
                 <h4>Tiling</h4>
-                <p>
-                    Expert floor and wall tiling for kitchens, bathrooms,
-                    and living spaces — aligned, neat, and built to last.
-                </p>
+                <p>Expert floor and wall tiling for kitchens, bathrooms, and living spaces.</p>
             </div>
 
             <div class="service-card">
                 <span>🎨</span>
                 <h4>Painting</h4>
-                <p>
-                    Interior and exterior painting with smooth finishes,
-                    quality materials, and professional preparation.
-                </p>
+                <p>Interior and exterior painting with smooth, professional finishes.</p>
+            </div>
+
+            <div class="service-card">
+                <span>🌿</span>
+                <h4>Lawn Care</h4>
+                <p>Lawn cutting, yard cleaning, and general outdoor maintenance.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- SHOWCASE -->
 <section id="work" class="showcase">
     <div class="container">
         <div class="section-title">
             <h3>Featured Work</h3>
-            <p>A selection of projects reflecting our quality standards</p>
         </div>
 
         <div class="featured-projects">
@@ -280,7 +95,6 @@ footer{
                 <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf">
                 <div>
                     <h4>Interior Painting</h4>
-                    <p>Clean finishes with attention to edges, corners, and detail.</p>
                 </div>
             </div>
 
@@ -288,7 +102,6 @@ footer{
                 <img src="tiles.jpg">
                 <div>
                     <h4>Floor Tiling</h4>
-                    <p>Precision layout and durable installation.</p>
                 </div>
             </div>
 
@@ -296,71 +109,60 @@ footer{
                 <img src="bathroom.jpg">
                 <div>
                     <h4>Bathroom Tiling</h4>
-                    <p>Moisture-safe finishes with professional alignment.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- PROCESS -->
-<section>
+<section id="gallery" class="gallery">
     <div class="container">
         <div class="section-title">
-            <h3>How We Work</h3>
+            <h3>Project Gallery</h3>
+            <p>Real work. Real results.</p>
         </div>
 
-        <div class="process">
-            <div class="step">
-                <span>①</span>
-                <h4>Consult</h4>
-                <p>We understand your needs and expectations.</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="assets/img1.jpg" loading="lazy" alt="Project">
             </div>
-            <div class="step">
-                <span>②</span>
-                <h4>Prepare</h4>
-                <p>Proper preparation ensures long-lasting results.</p>
+            <div class="gallery-item">
+                <img src="assets/img2.jpg" loading="lazy" alt="Project">
             </div>
-            <div class="step">
-                <span>③</span>
-                <h4>Execute</h4>
-                <p>Quality workmanship with attention to detail.</p>
+            <div class="gallery-item">
+                <img src="assets/img3.jpg" loading="lazy" alt="Project">
             </div>
-            <div class="step">
-                <span>④</span>
-                <h4>Deliver</h4>
-                <p>Clean handover and customer satisfaction.</p>
+            <div class="gallery-item">
+                <img src="assets/img4.jpg" loading="lazy" alt="Project">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img5.jpg" loading="lazy" alt="Project">
+            </div>
+            <div class="gallery-item">
+                <img src="assets/img6.jpg" loading="lazy" alt="Project">
             </div>
         </div>
     </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="experience">
-    <div class="container">
-        <div class="section-title">
-            <h3>Our Experience</h3>
-        </div>
-        <p>
-            With extensive hands-on experience in painting and tiling,
-            we deliver consistent quality on every project — big or small.
-            Our focus is durability, neat finishes, and customer trust.
-        </p>
-    </div>
-</section>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" id="lightbox-img">
+</div>
 
-<!-- CTA STRIP -->
-<section class="cta-strip">
-    <h3>Need Professional Tiling or Painting?</h3>
-    <p>Call us today and let’s get your project done right.</p>
-</section>
-
-<!-- CONTACT -->
 <section id="contact" class="contact">
     <div class="container">
         <div class="section-title">
             <h3>Contact Us</h3>
         </div>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <textarea placeholder="Tell us about your project..." required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
 
         <div class="contact-info">
             <p>📍 Pietermaritzburg (Mobile)</p>
@@ -370,8 +172,15 @@ footer{
 </section>
 
 <footer>
-    © 2025 On The Go Construction • Built on Integrity & Excellence
+    © 2025 On The Go Construction
 </footer>
+
+<!-- Link JS -->
+<script src="script.js"></script>
+
+<a href="https://wa.me/27703004230" class="whatsapp-btn" target="_blank">
+    💬
+</a>
 
 </body>
 </html>
